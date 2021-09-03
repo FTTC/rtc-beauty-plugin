@@ -1,6 +1,6 @@
 ## 功能描述
 
-TRTC 可以通过插件，帮助开发者轻松实现基础美颜功能。用户可以调整美颜参数，实现自然的美颜效果。[点击此处](https://web.sdk.qcloud.com/trtc/webrtc/test/latest/beauty/index.html) 体验美颜效果。
+TRTC 可以通过插件，帮助开发者轻松实现基础美颜功能。用户可以调整美颜参数，实现自然的美颜效果。[点击此处](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/improve-beauty.html) 体验美颜效果。
 
 | 浏览器            | 版本        |
 |------------------|------------|
@@ -63,6 +63,8 @@ await client.publish(beautyStream);
 ### setBeautyParam(options)
 **功能：** 调节美颜插件的美颜程度。
 
+如果您想关闭美颜效果，将三个参数都设置为 0 即可。
+
 #### Params:
 
 | Name   | Type      | Description     |
@@ -73,6 +75,9 @@ await client.publish(beautyStream);
 
 ```javascript
 beautyPlugin.setBeautyParam({ beauty: 0.5, brightness: 0.5, ruddy: 0.5 });
+
+// 如果您想关闭美颜效果，将三个参数都设置为 0 即可，如果要重新开启，设置任意一个参数 > 0 即可打开美颜能力。
+beautyPlugin.setBeautyParam({ beauty: 0, brightness: 0, ruddy: 0 });
 ```
 
 ### destory()
